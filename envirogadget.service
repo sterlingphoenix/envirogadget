@@ -1,0 +1,10 @@
+[Unit]
+Description=Envirogadget
+After=network.target
+
+[Service]
+User=pi
+ExecStart=/usr/local/bin/envrogadget.py
+
+[Install]
+WantedBy=multi-user.target
