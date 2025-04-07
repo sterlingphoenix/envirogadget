@@ -32,6 +32,7 @@ update_sec=10
 sleep_step=0.5
 current_sec=0
 mode = 1
+offset = 10
 
 # LCD screen
 display = st7735.ST7735(
@@ -57,11 +58,14 @@ def showtext(m):
 	text_color = (255, 130, 0)
 
 	message = m
-	size_x, size_y = draw.textsize(message, font)
 
 	# Calculate text position
+	x1, y1, x2, y2 = font.getbbox(message)
+	size_x = x2 - x1
+	size_y = y2 - y1
+
 	x = (WIDTH - size_x) / 2
-	y = (HEIGHT / 2) - (size_y / 2)
+	y = (HEIGHT / 2) - (size_y / 2)	- offset
 
 	# Draw background rectangle and write text.
 	draw.rectangle((0, 0, 160, 80), back_color)
