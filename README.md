@@ -20,4 +20,10 @@ Activate virtual environment:
 
 Follow [Pimoroni's installation instructions](https://github.com/pimoroni/enviroplus-python/).
 
+### Install script/service
 
+* Install script in `/usr/local/bin`, make sure it is executable (i.e., `chmod 755`)
+* Install service file in `/etc/systemd/system/`.
+* Run `sudo systemctl enable envirogadget`
+* Optional: sudo systemctl start envirogadget` to make sure it works.
+* Optional: set system to read-only.
